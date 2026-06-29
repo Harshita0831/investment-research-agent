@@ -9,6 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^2.10.0",
+    "@langchain/core": "^1.2.1",
+    "@langchain/google-genai": "^2.2.0",
+    "axios": "^1.18.1",
+    "langchain": "^1.5.2",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"
