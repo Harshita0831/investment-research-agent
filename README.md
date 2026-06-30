@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Investment Research Agent
 
-## Getting Started
+## Overview
 
-First, run the development server:
+AI Investment Research Agent is a web application built using **Next.js**, **TypeScript**, **Tailwind CSS**, and **Google Gemini AI**. It allows users to enter a company name and receive an AI-generated investment analysis.
+
+The application performs AI-powered research and provides:
+
+* Investment Recommendation
+* Confidence Score
+* Summary
+* Strengths
+* Risks
+* Future Outlook
+
+---
+
+# Tech Stack
+
+* Next.js 16
+* React
+* TypeScript
+* Tailwind CSS
+* Google Gemini API
+* LangChain (installed for AI workflow)
+* Vercel
+
+---
+
+# Features
+
+* AI-powered company analysis
+* Clean and responsive interface
+* Gemini LLM integration
+* REST API using Next.js Route Handlers
+* JSON based AI responses
+* Modern UI
+
+---
+
+# How to Run
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Harshita0831/investment-research-agent.git
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Create Environment File
+
+Create a file named:
+
+```text
+.env.local
+```
+
+Add:
+
+```env
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+ALPHA_VANTAGE_API_KEY=YOUR_ALPHA_VANTAGE_API_KEY
+```
+
+## Run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# How It Works
 
-To learn more about Next.js, take a look at the following resources:
+1. User enters a company name.
+2. Frontend sends the request to `/api/analyze`.
+3. Backend calls Google Gemini API.
+4. Gemini analyzes the company and returns structured investment insights.
+5. Results are displayed on the frontend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Architecture
 
-## Deploy on Vercel
+```
+Frontend (Next.js)
+        │
+        ▼
+SearchBar Component
+        │
+        ▼
+API Route (/api/analyze)
+        │
+        ▼
+Gemini AI
+        │
+        ▼
+JSON Response
+        │
+        ▼
+Investment Recommendation UI
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Key Decisions & Trade-offs
+
+### Decisions
